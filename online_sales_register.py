@@ -41,7 +41,7 @@ class OnlineSalesRegisterCollector:
         discount = 0.1
 
         for item in self.__name_items:
-            total.append(self.__name_items[item])
+            total.append(self.__item_price[item])
         if len(total) > 10:
             return sum(total) * (1 - discount)
         else:
