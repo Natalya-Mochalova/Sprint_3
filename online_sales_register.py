@@ -42,10 +42,13 @@ class OnlineSalesRegisterCollector:
 
         for item in self.__name_items:
             total.append(self.__item_price[item])
-        if len(total) > 10:
-            return sum(total) * (1 - discount)
+        
+        sum_without_discount = sum(total)
+
+        if self.__number_items > 10:
+            return sum_without_discount * (1 - discount)
         else:
-            return sum(total)
+            return sum_without_discount
     
 
     def twenty_percent_tax_calculation(self):
